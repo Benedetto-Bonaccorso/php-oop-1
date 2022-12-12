@@ -1,33 +1,26 @@
-<?php
 
-class Movie {
-    public $name;
-    public $releaseYear;
-    public $isRecent;
-    public $genre;
-  
-    function __construct($name, $releaseYear, $genre) {
-      $this->name = $name;
-      $this->releaseYear = $releaseYear;
-      $this->genre = $genre;
-    }
-    function setIsRecent() {
-        if($this->releaseYear == 2022){
-            $this->isRecent = true;
-        } else {
-            $this->isRecent = false;
-        }
-    }
-    function getReleaseYear() {
-      return $this->releaseYear;
-    }
-  }
 
-$morbius = new Movie("morbius", 2022, "superhero");
-$morbius->setIsRecent();
 
-$endOfEvangelion = new Movie("The End Of Evangelion", 1997, "depression");
-$endOfEvangelion->setIsRecent();
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    
 
-var_dump($morbius);
-var_dump($endOfEvangelion);
+    <div id="app">
+
+        <div v-for="movie in movies">
+            {{movie}}
+        </div>
+
+    </div>
+    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
